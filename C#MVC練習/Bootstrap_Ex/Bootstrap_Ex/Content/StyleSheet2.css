@@ -1,0 +1,36 @@
+﻿/*標題*/
+.jumbotron {
+    text-align: center;
+    background-color: greenyellow;
+}
+/*卡牌*/
+.card {
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+    /*圖片*/
+    .card img {
+        width: 100%;
+    }
+    /*當滑鼠放上去的時候，圖片下方的背景變色*/
+    .card:hover .card-block {
+        background-color: aquamarine;
+    }
+/*如果圖片太大，藏起超出的部份*/
+.card, .headshot {
+    overflow: hidden;
+}
+/*圖片下方的部份*/
+.card-block {
+    border-top: 1px solid black;
+    background-color: lightpink;
+    padding: 10px;
+}
+/*圖片下方的部份 h3 的文字區域*/
+.card-title {
+    color: white;
+    background-color: black;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+}

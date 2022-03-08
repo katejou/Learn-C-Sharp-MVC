@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0, user-scalable=no" />
+
+    <!--<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+    <link rel="stylesheet" href="../Content/jquery.mobile-1.4.5.css">
+    <script src="../Scripts/jquery-2.2.4.js"></script>
+    <script src="../Scripts/jquery.mobile-1.4.5.js"></script>
+
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .footer-button-left, .footer-button-right {
+            position: absolute;
+            margin: 0;
+            top: auto;
+            bottom: 0.24em;
+        }
+
+        .footer-button-left {
+            left: 0.4em;
+        }
+
+        .footer-button-right {
+            right: 0.4em;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <!-- ui-btn-icon-left ui-icon-home -->
+            <a herf="#" class=" ui-btn-icon-left ui-icon-home ui-btn ui-btn-b ui-corner-all">首頁</a>
+            <h1>各國旅遊資訊+ICON</h1>
+            <!-- ui-btn-icon-right ui-icon-info -->
+            <a herf="Dialog.html" class="ui-btn-icon-right ui-icon-info ui-btn ui-btn-b ui-corner-all">訊息</a>
+        </div>
+        <div role="main" class="ui-content">
+            <img src="../Content/images/photo/travel.jpg" />
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">法</a></li>
+                <li><a href="#">美</a></li>
+                <li><a href="#">加</a></li>
+            </ul>
+        </div>
+        <div data-role="footer">
+            <!-- ui-btn-icon-left ui-icon-carat-l -->
+            <a herf="#" class=" ui-btn-icon-left ui-icon-carat-l ui-btn footer-button-left ui-btn-b ui-corner-all">前頁</a>
+            <h3>&copy; 觀光局 2021</h3>
+            <!-- ui-btn-icon-right ui-icon-carat-r -->
+            <a herf="#" class=" ui-btn-icon-right ui-icon-carat-r ui-btn footer-button-right ui-btn-b ui-corner-all">下頁</a>
+        </div>
+    </div>
+</body>
+</html>

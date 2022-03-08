@@ -1,0 +1,144 @@
+﻿@model Chart_ex.Models.User
+@{
+    ViewBag.Title = "SampleHelpers";
+}
+
+<h2>SampleHelpers</h2>
+
+@* 這兩個是弱型別，在Controller 那一邊，指定為ViewData.Model 就可以顯示了 *@
+<br />
+@Html.DisplayName("Name") : @Html.Display("Name")
+<br />
+@Html.DisplayName("Nickname") : @Html.Display("Nickname")
+<br />
+<br />
+@* 這兩個是強型別，要在上方，@model XXXX.Models.User，才可以指定這個 m 是什麼 *@
+@* m 這個字用什麼來代替都可以 *@
+<br />
+@Html.DisplayNameFor(m => m.Email): @Html.DisplayFor(m => m.Email)
+<br />
+@Html.DisplayNameFor(m => m.Terms): @Html.DisplayFor(m => m.Terms)
+<br />
+<br />
+@* 顯示純文字 *@
+<br />
+@* 弱型別 *@
+@Html.DisplayText("Email")
+<br />
+@* 強型別 *@
+@Html.DisplayTextFor(m => m.Terms)
+<br />
+<br />
+@* Label *@
+<br />
+@* 弱型別 *@
+@Html.Label("Name")
+<br />
+@* 強型別 *@
+@Html.LabelFor(m => m.Nickname)
+<br />
+<br />
+@* TextBox *@
+<br />
+@* 弱型別 *@
+@Html.Label("Name") @Html.TextBox("Name")
+<br />
+@* 強型別 *@
+@Html.LabelFor(m => m.Email) @Html.TextBoxFor(m => m.Email)
+<br />
+<br />
+@* Password *@
+<br />
+@Html.Password("Password")
+<br />
+@Html.PasswordFor(m => m.Password)
+<br />
+<br />
+@* CheckBox *@
+<br />
+@Html.CheckBox("Terms")
+<br />
+@Html.CheckBoxFor(m => m.Terms)
+<br />
+<br />
+@* 明確的指定CheckBox *@
+<br />
+@Html.CheckBox("Terms", false)
+<br />
+@* 我不知道如果要指定為 @checked = "false" 是可以怎樣寫… *@
+@Html.CheckBoxFor(m => m.Terms, htmlAttributes: new { @checked = "checked" })
+<br />
+<br />
+@* RadioButton *@
+@* 第一個元素，指定為同一個的話，它們就是任選其一的關係 *@
+<br />
+@Html.RadioButton("Sex", "Female", true) 弱女
+@Html.RadioButton("Sex", "Male") 弱男
+@Html.RadioButton("Sex", "Other") 弱其他
+<br />
+@Html.RadioButtonFor(m => m.Gender, "Female") 強女
+@Html.RadioButtonFor(m => m.Gender, "Male", new { @checked = "checked" }) 強男
+@Html.RadioButtonFor(m => m.Gender, "Other") 強其他
+<br />
+<br />
+@* DropDownList *@
+<br />
+@* 這個不透過任何物件生成的 *@
+@Html.DropDownList("City", new SelectList(new[] { "選一", "選二", "選三" }))
+<br />
+@{
+    List<SelectListItem> cityList = new List<SelectListItem>
+{
+      new SelectListItem{ Text="選A", Value="1"},
+      new SelectListItem{ Text="選B", Value="2"},
+      new SelectListItem{ Text="選C", Value="3",Selected=true}
+    };
+}
+@* 這個也是，但是這個可以分開 Text 和 Value *@
+@Html.DropDownList("City", cityList)
+<br />
+@* 這個 m => m.City 明明是個數字值，但是於在這裡，不知道為什麼？*@
+@* 效果和上面一模一樣 ?*@
+@* 不，這個數字，代表了他預設的 Value… *@
+@* 如果什麼都不選，就預設選最晚的哪個 *@
+@Html.DropDownListFor(m => m.City, cityList)
+<br />
+<br />
+@* ListBox *@
+<br />
+@* 這個不透過任何物件生成的 *@
+@Html.ListBox("Commutemode", new SelectList(new[] { "一一", "二二", "三三" }))
+@{
+    List<SelectListItem> CommutermodeList = new List<SelectListItem>
+{
+        new SelectListItem{ Text="一1一",Value="1", Selected=false},
+        new SelectListItem{ Text="二2二",Value="2", Selected=true},
+        new SelectListItem{ Text="三3三",Value="3", Selected=true}
+    };
+}
+<br />
+@* 這個也是，但是這個可以分開 Text 和 Value *@
+@Html.ListBoxFor(m => m.Commutermode, CommutermodeList)
+<br />
+<br />
+@* TextArea , TextAreaFor*@
+<br />
+@Html.TextArea("Comment")
+<br />
+@Html.TextAreaFor(m => m.Comment)
+<br />
+@* 加入 相關參數 *@
+@*
+    這個 foucs 效果比較好
+    6 和 4 是 row ， 8 是 col 但好像沒有效果？ 還是我漏了什麼，有空再回去
+*@
+<br />
+<br />
+@Html.TextArea("Comment", "請輸入意見", 6, 12, new { @class = "form-control" })
+<br />
+@Html.TextAreaFor(m => m.Comment, 4, 8, new { @class = "form-control" })
+<br />
+<br />
+<br />
+<br />
+<br />

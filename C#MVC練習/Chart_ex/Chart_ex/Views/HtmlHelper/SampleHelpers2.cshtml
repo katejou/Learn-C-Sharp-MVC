@@ -1,0 +1,27 @@
+﻿@model Chart_ex.Models.User
+@{
+    ViewBag.Title = "SampleHelpers2";
+}
+
+<h2>SampleHelpers2</h2>
+
+@* Form 的兩種方法 *@
+
+@* 連合式 *@
+@using (Html.BeginForm())
+{
+    @Html.TextBox("Name")
+    @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+    <br />
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    <br />
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <br />
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+}
+
+@* 分開式 *@
+@{ Html.BeginForm();}
+
+@{ Html.EndForm();}

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<jQueryMobile_Ex2.Models.Hero>
+@{
+    ViewBag.Title = "CarsListDB";
+    var Category = "";
+}
+
+
+<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="b">
+    <a href="#" data-role="button" data-rel="back" data-theme="a">返回</a>
+    <h1>英雄介紹</h1>
+</div>
+
+<div data-role="content">
+    <ul data-role="listview" data-inset="true" data-theme="a" data-divider-theme="b">
+
+        @foreach (var hero in Model)
+        {
+            if (Category != hero.Header) 
+                //這個是 list-divider 的內容不能重覆的意思吧…
+                //雖然在這裡是沒什麼用…
+            {
+                Category = hero.Header;
+                <li data-role="list-divider"><h1>@hero.Header</h1></li>
+            }
+
+            <li data-icon="false">
+                <a href=@hero.VideoUrl>
+                    <img src=@hero.ImgUrl />
+                    <h2>@hero.ImgAlt</h2>
+                    <p>@hero.Intro</p>
+                </a>
+            </li>
+
+
+        }
+
+    </ul>
+</div>
+

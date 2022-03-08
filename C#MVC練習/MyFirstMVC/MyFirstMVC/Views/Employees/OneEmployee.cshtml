@@ -1,0 +1,19 @@
+﻿@model MyFirstMVC.Models.Employee
+
+@{
+    ViewBag.Title = "OneEmployee";
+}
+
+<h2>OneEmployee</h2>
+<ul>
+    <li>@Model.ID</li>
+    <li>@Model.Name</li>
+    <li>@Model.Phone</li>
+    <li>@Model.Email</li>
+</ul>
+<ul>
+    <li>@Html.DisplayNameFor(model => model.ID)</li>
+    <li>@Html.DisplayNameFor(model => model.Name)</li>
+    <li>@Html.DisplayNameFor(model => model.Phone)</li>
+    <li>@Html.DisplayNameFor(model => model.Email)</li>
+</ul>

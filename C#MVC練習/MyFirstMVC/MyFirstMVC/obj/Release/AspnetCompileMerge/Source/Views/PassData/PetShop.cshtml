@@ -1,0 +1,19 @@
+﻿@*@model List<string>*@
+@{
+    ViewBag.Title = "竉物店";
+}
+
+<h2>PetShop</h2>
+公司名︰@ViewData["Company"]
+<br />
+地址︰@ViewData["Company"]
+<br />
+竉物種類有︰
+<br />
+<ul>
+    @foreach (var pet in Model) // 這個是關鍵字，不論那個物件本身叫什麼，反正來了View都是這樣叫它
+    {
+        <li>@pet</li>
+    }
+
+</ul>

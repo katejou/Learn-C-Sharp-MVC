@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>折線圖實作 - 點</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/Chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <canvas id="lineChart"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('lineChart');
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [
+                    {
+                        label: "Taipei",
+                        data: [16, 15, 18, 21, 25, 27, 25, 21, 18, 15],
+                        fill: false,
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: ['circle','cross','crossRot','dash','line','rect','rectRounded','rectRot','star','triangle'],
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: 'Jan-Oct Average Temperature'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: 'black',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

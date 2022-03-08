@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Transition的動畫效果(Dialog)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Content/jquery.mobile-1.4.5.css">
+    <script src="../Scripts/jquery-2.2.4.js"></script>
+    <script src="../Scripts/jquery.mobile-1.4.5.js"></script>
+
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Transition的動畫效果(Dialog)</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <a href="#internalDialog" class="ui-btn" data-transition="fade">fade</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="pop">pop</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="flip">flip</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="turn">turn</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="flow">flow</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="slidedown">slidedown</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="slidefade">slidefade</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="slide">slide</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="slideup">slideup</a>
+            <a href="#internalDialog" class="ui-btn" data-transition="none">none</a>
+
+        </div>
+    </div>
+
+    <div data-role="page" id="internalDialog" data-dialog="true">
+        <div data-role="header">
+            <h1>被「內」呼叫的Dialog頁</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h1>Dialog對話方塊</h1>
+            <p>
+                因為是Page結構的，所以可以應用多重Page技巧，放在同一個HTML。
+            </p>
+            <a href="#"
+               data-role="button"
+               data-rel="back"
+               data-theme="b"
+               class="ui-btn ui-corner-all">返回</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

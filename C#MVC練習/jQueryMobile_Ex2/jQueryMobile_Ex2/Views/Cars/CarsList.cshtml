@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "CarsList";
+}
+
+<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="b">
+    <a href="#" data-role="button" data-rel="back" data-theme="a">返回</a>
+    <h1>車款介紹</h1>
+</div>
+
+<div data-role="content">
+    <ul data-role="listview" data-inset="true" data-theme="a" data-divider-theme="b">
+        @* 麥坤 *@
+        <li data-role="list-divider"><h1>麥坤</h1></li>
+        <li data-icon="false">
+            <a href="#">
+                <img src="~/Content/images/car/macQ.jpg" />
+                <h2>Lightning McQueen</h2>
+                <p>主角</p>
+            </a>
+        </li>
+        @* 拖線 *@
+        <li data-role="list-divider"><h1>拖線</h1></li>
+        <li data-icon="false">
+            <a href="#">
+                <img src="~/Content/images/car/Tomy.jpg" />
+                <h2>Tow Mater</h2>
+                <p>死黨</p>
+            </a>
+        </li>
+        @* 拖線 *@
+        <li data-role="list-divider"><h1>韓森</h1></li>
+        <li data-icon="false">
+            <a href="#">
+                <img src="~/Content/images/car/doctor.jpg" />
+                <h2>Hudson Hornet</h2>
+                <p>老師</p>
+            </a>
+        </li>
+        @* 女友 *@
+        <li data-role="list-divider"><h1>莎莉</h1></li>
+        <li data-icon="false">
+            <a href="#">
+                <img src="~/Content/images/car/shery.jpg" />
+                <h2>Sally Carrera</h2>
+                <p>女友</p>
+            </a>
+        </li>
+    </ul>
+</div>
+

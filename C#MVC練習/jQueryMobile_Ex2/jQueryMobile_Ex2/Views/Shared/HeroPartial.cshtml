@@ -1,0 +1,23 @@
+﻿@model jQueryMobile_Ex2.Models.Hero
+
+<div data-role="page" id=@Model.PageId>
+
+    <div data-role="header" data-theme="a">
+        <h1>@Model.Header</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <img src=@Model.ImgUrl alt=@Model.ImgAlt>
+        <p>
+            @Model.Intro
+        </p>
+        <div class="video-responsive">
+            <iframe src=@Model.VideoUrl frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div data-role="footer" data-theme="b" data-position="fixed">
+        <h3>@Model.Footer</h3>
+    </div>
+
+</div>

@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<Bootstrap_Ex.Models.Card>
+@{
+    ViewBag.Title = "SimpleCard_Model";
+}
+<div class="jumbotron">
+    <h2>SimpleCard_Model</h2>
+</div>
+
+<div class="row">
+    @foreach (var man in Model)
+    {
+        @Html.Partial("_PartialPage2", man);
+    }
+
+</div>
+@section topCSS{
+
+    <link href="~/Content/StyleSheet2.css" rel="stylesheet">
+
+}

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    @*@Styles.Render("~/Content/Mobile/css", "~/Content/jquerymobile/css")
+        @Scripts.Render("~/bundles/jquery", "~/bundles/jquerymobile")*@
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    @* 2.2.4 的版本居然太新？ *@
+    @*<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>*@
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    @RenderSection("topCSS", required: false)
+    @RenderSection("topJS", required: false)
+    <script>
+        $(document).ready(function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+</head>
+<body>
+
+    <div data-role="page">
+
+        @* RenderBody 中有 Header 和 Content *@
+        @RenderBody()
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h3>這是LayoutCar</h3>
+        </div>
+
+    </div>
+    @RenderSection("endCSS", required: false)
+    @RenderSection("endJS", required: false)
+</body>
+</html>

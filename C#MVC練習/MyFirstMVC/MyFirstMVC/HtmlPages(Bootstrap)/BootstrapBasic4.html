@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- 確保IE以最新的Render mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 以平板或手機優先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 引入Bootstrap -->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title>第 4 個Bootatrap - 要把窗戶縮窄來看 Toggle</title>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <!-- 頂行 -->
+            <div class="navbar-header row">
+                <!-- Toggle 切換按鈕 + 在button 中加三條橫線的方法-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 同列的標題 -->
+                <a class="narbar-brand" href="#">
+                    導覽列
+                </a>
+            </div>
+            <!-- Toggle 展開後的內容 -->
+            <div class="navbar-collapse collapse">
+                <ul>
+                    <li><a href="#">產品</a></li>
+                    <li><a href="#">關於</a></li>
+                    <li><a href="#">客服</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--<script src="../Scripts/jquery-3.6.0.min.js"></script>-->
+        <script src="../Scripts/bootstrap.min.js"></script>
+    </div>
+</body>
+</html>

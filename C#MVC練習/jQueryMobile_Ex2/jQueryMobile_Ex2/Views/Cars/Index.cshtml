@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    // 這個基本上沒有用，除非頁面一片空白，它才會顯示出來。
+}
+
+<div data-role="header" data-position="fixed" data-theme="b">
+    <h1>汽車情報網</h1>
+</div>
+
+<div data-role="main" class="ui-content">
+    <div id="carlogo">
+        <img src="~/Content/images/car/carlogo.jpg">
+    </div>
+    <ul data-role="listview" data-inset="true">
+        <li><a href="CarsList">車款</a></li>
+        <li><a href="CarsListDB">英雄</a></li>
+        <li><a href="Repair">保養reflow</a></li>
+        <li><a href="Repair2">保養columntoggle</a></li>
+        <li><a href="Contact">客服</a></li>
+        <li><a href="About">關於</a></li>
+    </ul>
+</div>
+

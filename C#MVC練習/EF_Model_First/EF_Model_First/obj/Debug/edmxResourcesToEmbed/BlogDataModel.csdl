@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BlogDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="BlogContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="BlogDataModel.Users" />
+    <EntitySet Name="Blog" EntityType="BlogDataModel.Blog" />
+    <EntitySet Name="Post" EntityType="BlogDataModel.Post" />
+    <AssociationSet Name="UsersBlog" Association="BlogDataModel.UsersBlog">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="BlogPost" Association="BlogDataModel.BlogPost">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Blog" Relationship="BlogDataModel.UsersBlog" FromRole="Users" ToRole="Blog" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Users" Relationship="BlogDataModel.UsersBlog" FromRole="Blog" ToRole="Users" />
+    <Property Name="UsersUserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Post" Relationship="BlogDataModel.BlogPost" FromRole="Blog" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Blog" Relationship="BlogDataModel.BlogPost" FromRole="Post" ToRole="Blog" />
+    <Property Name="BlogBlogId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="UsersBlog">
+    <End Type="BlogDataModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="BlogDataModel.Blog" Role="Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UsersUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BlogPost">
+    <End Type="BlogDataModel.Blog" Role="Blog" Multiplicity="1" />
+    <End Type="BlogDataModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="BlogId" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="BlogBlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,14 @@
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\northwnd.ldf
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\northwnd.mdf
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EF_DB_First.exe.config
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EF_DB_First.exe
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EF_DB_First.pdb
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EntityFramework.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EntityFramework.xml
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\obj\Debug\EF_DB_First.csproj.AssemblyReference.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\obj\Debug\EF_DB_First.csproj.CoreCompileInputs.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\obj\Debug\EF_DB_First.exe
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_DB_First\EF_DB_First\obj\Debug\EF_DB_First.pdb

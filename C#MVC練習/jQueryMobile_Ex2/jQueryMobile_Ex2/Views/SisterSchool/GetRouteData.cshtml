@@ -1,0 +1,32 @@
+﻿
+@{
+    // 讀取路由的 Pattern 設定值
+
+    var route = ViewContext.RouteData.Route;
+    var UrlPattern = route.GetType().GetProperty("Url").GetValue(route);
+
+    //ViewBag.Title = "GetRouteData";
+}
+
+
+<h2>GetRouteData</h2>
+<br />
+<br />
+<h3>URL 請求︰ @Request.RawUrl</h3>
+<h3>URL 請求︰@ViewContext.RequestContext.HttpContext.Request.RawUrl</h3>
+<br />
+<br />
+<h3>對映路由URL Pattern :@UrlPattern</h3>
+@* 逐一讀取路由的參數 *@
+<ul>
+    @foreach (var item in ViewContext.RouteData.Values)
+    {
+        <li>@item.Key : @item.Value</li>
+    }
+</ul>
+<br />
+<br />
+@*  書中建議，如果路由出了路題，
+    就把以上的這個 View 建成 PartialView 植入到有問題的View中，
+    去找出程式是什麼問題，它讀到的值是什麼值。*@
+@*@Html.Partial("RouteInfoPartial")*@

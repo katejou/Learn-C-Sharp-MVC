@@ -1,0 +1,80 @@
+﻿@model Chart_ex.Models.Editor_Using_Obj
+
+
+@{
+    ViewBag.Title = "SampleHelpers5";
+}
+
+
+<h2>SampleHelpers5</h2>
+
+@* BeginForm方法 我不知道它是紅線個什麼鬼，但是要跑還是可以跑 *@
+@using (Html.BeginForm("SampleHelpers5", "HtmlHelper",
+    FormMethod.Post,
+    htmlAttributes: new { @class = "form-horizontal", role = "form" }))
+{
+    <br />
+    <br />
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <br />
+    <br />
+}
+<br />
+@* Label方法 *@
+@Html.Label("Name", htmlAttributes: new { @class = "control-label", @style = "color:red" })
+@Html.LabelFor(m => m.Name, new { @class = "control-label", @style = "color:blue" })
+<br />
+@* TextBox方法 *@
+@Html.TextBox("Name", null, new { @class = "form-control", style = "background:bisque" })
+@Html.TextBoxFor(m => m.Name, null, new { @class = "form-control", style = "background:lightblue" })
+<br />
+@* Password方法 *@
+@Html.Password("Password", null, new { @class = "form-control", style = "background:lightgreen" })
+@Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+<br />
+@* CheckBox方法 *@
+@Html.CheckBox("Terms", true, new { title = "同意否" })條款
+@Html.CheckBoxFor(m => m.Terms, new { disabled = "disabled" })條款
+<br />
+@* RadioButton方法 *@
+@Html.RadioButton("Gender", "女性", true, new { title = "選擇你的性別" })女性
+@Html.RadioButtonFor(m => m.Gender, "男性", new { id = "Male" })男性
+<br />
+@* DropDownList方法 *@
+@Html.DropDownList("縣市", new SelectList(new[] { "縣市1", "縣市2", "縣市3" }), new { style = "color:blue" })
+@Html.DropDownListFor(m => m.City, new SelectList(new[] { "縣市4", "縣市5", "縣市6" }), new { style = "color:purple" })
+<br />
+@* Editor方法  不可省略︰ htmlAttributes = *@
+@Html.Editor("Email", new { htmlAttributes = new { @class = "form-control", @style = "background-color:cyan" } })
+@Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control", @style = "background-color:lightpink" } })
+
+<br />
+@* ListBox方法 *@
+@Html.ListBox("Commutermode", new SelectList(new[] { "通勤一", "通勤二", "通勤三" }), new { title = "通勤工具" })
+@Html.ListBoxFor(m => m.Commutermode, new SelectList(new[] { "通勤四", "通勤五", "通勤六" }), new { title = "通勤方式" })
+
+<br />
+@* TextArea方法 cols 這個屬性，還是完全沒有顯示到它的功能 *@
+@Html.TextArea("Comment", new { @class = "form-control", rows = "4", cols = "20", maxlength = "10", placeholder = "請在這裡輸入說明" })
+@Html.TextArea("Comment", new { @class = "form-control", rows = "8", cols = "10", maxlength = "10", placeholder = "請在這裡輸入說明" })
+
+<br />
+@* ValidationMessage 方法 *@
+@Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-info" })
+
+<br />
+@* ValidationSummary 方法 *@
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+<br />
+@* ActionLink 方法 *@
+@{ var item = Model; }
+@Html.ActionLink("新增", "Create", null, new { @class = "btn btn-warning" })
+@Html.ActionLink("明細", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
+@Html.ActionLink("編輯", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+@Html.ActionLink("刪除", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+
+
+

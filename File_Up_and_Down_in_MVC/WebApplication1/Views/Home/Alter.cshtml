@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "Alter";
+    List<string> fns = ViewBag.FileNames;
+}
+
+
+<script>
+
+@* (X) 用ajax的方法，傳出檔名，到Controller中把檔案刪除。成功後，同時刪除該行。 *@
+
+    function deleteFile(fn,btn) {
+        // 會Post過去的資料容器
+        var FileName = {'Name': fn };
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteFile")",
+                data: FileName
+            })
+                .done(function (data) {
+                    alert( fn + "  " + data.Status);
+                    // 刪行
+                    deleteRow(btn);
+                })
+                .fail(function () {
+                    alert("刪檔不成功");
+                });
+    }
+
+    // 刪行
+    function deleteRow(btn) {
+        var row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+
+    // 新增一行
+    function addRow(fn) {
+        $('#myTable').find('tbody').append(
+            "<tr><td>" + fn + "</td>" +
+            "<td> <button type='submit' style='background: none; border: none; padding: 0; margin-left: 10px;' onclick=\"deleteFile('" + fn + "',this);\"> <span class='glyphicon glyphicon-remove'></span></button></td>"+
+            "<td><a style='background: none; border: none; padding: 0; margin-left: 10px;' href=\"../File/" + fn + "\" target='_blank' class='glyphicon glyphicon-save-file' download></a></td>"+
+            "</tr>");
+    }
+
+
+@* (+) 用ajax的方法，上傳檔案，到Controller中把檔案新增。成功後，列出檔案，旁附(X)*@
+
+    //選後顯示名稱
+    function showName(sele) {
+        if (sele.files.length > 0) {
+            document.getElementById('fn').innerHTML = sele.files[0].name;
+        }
+        else {
+            alert('沒選');
+            document.getElementById('fn').innerHTML = '';
+        }
+    }
+
+    //檢查有檔案，並上傳
+    function submitCheck() {
+
+        var sele = document.getElementById('upload_select');
+
+        if (sele.value == "") {
+            alert('你沒有選檔案');
+        }
+        else {
+
+            // 顯示 Loading
+            sele.disabled = true;
+            $('#loading').show();
+
+            //## 透過ajax方式 Post 至Action
+            var data = new FormData();
+            data.append("UploadedImage", sele.files[0]);
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "@Url.Action("UploadFile")",
+                    contentType: false,         //##  告诉jQuery不要去這置Content-Type
+                    processData: false,         //##  告诉jQuery不要去處理發送的數據
+                    dataType: "json",
+                    data: data
+            })
+                .done(function (data) {
+
+                    //alert(data.Status);
+                    //document.getElementById('status').innerHTML = fn + " 上傳成功";
+
+                    //清空 file input
+                    document.getElementById('upload_select').value = '';
+                    document.getElementById('fn').innerHTML = '';
+
+                    //解除 Loading
+                    $('#loading').hide();
+                    sele.disabled = false;
+
+                    // 新增一行
+                    var fn = data.FileName;
+                    addRow(fn); // <-- 只有這一點，和 New 不同
+
+                })
+                .fail(function () {
+
+                    alert("上傳不成功");
+
+                    //解除 Loading
+                    $('#loading').hide();
+                    sele.disabled = false;
+
+                });
+        }
+    }
+
+</script>
+
+<br />
+<br />
+
+<table id="myTable">
+    <tbody>
+        @* 列出檔案，旁附(X) *@
+        @foreach (var fn in fns)
+        {
+            <tr>
+                <td>@fn</td>
+                <td>
+                    <button type="submit"
+                            style="background: none; border: none; padding: 0; margin-left: 10px;"
+                            onclick="deleteFile('@fn',this);">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+                <td>
+                    <a 
+                       style="background: none; border: none; padding: 0; margin-left: 10px;"
+                       href="../File/@fn"
+                       target="_blank"
+                       class="glyphicon glyphicon-save-file"
+                       download>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+@* 選檔用 *@
+<label for="upload_select" class="glyphicon glyphicon-folder-open"></label>
+<input id="upload_select" name="TheFile" type="file" style="display:none;" onchange="showName(this);" />
+@* 顯示檔名用 *@
+<span id="fn" style="margin-left:10px;"></span>
+@* 確定上傳用  *@
+<button type="submit"
+        style="background: none; border: none; padding: 0; margin-left: 10px;"
+        onclick="submitCheck();">
+    <span class="glyphicon glyphicon-open-file"></span>
+</button>
+@* 顯示藍色的字用，回報上傳狀態 *@
+<div class="spinner-border text-primary" role="status">
+    <span style="display:none;" id="loading">Loading...</span>
+    <span id="status"></span>
+</div>
+

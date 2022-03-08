@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Chart_ex.Models.Employee>
+@* 那些紅線，好像建置的時候又沒有了？ *@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-striped table-bordered table-hover">
+
+    <caption>
+        <div class="glyphicon glyphicon-user"></div>員工資料
+    </caption>
+
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Id)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Mobile)</th>
+            <th>@Html.DisplayNameFor(m => m.Email)</th>
+            <th>@Html.DisplayNameFor(m => m.Department)</th>
+            <th>@Html.DisplayNameFor(m => m.Title)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            @* 注意是 x => m.XXX 這個 x 是代表取得當時的迴圈值 *@
+            <tr>
+                <td>@Html.DisplayFor(x => m.Id)</td>
+                <td>@Html.DisplayFor(x => m.Name)</td>
+                <td>@Html.DisplayFor(x => m.Mobile)</td>
+                <td>@Html.DisplayFor(x => m.Email)</td>
+                <td>@Html.DisplayFor(x => m.Department)</td>
+                <td>@Html.DisplayFor(x => m.Title)</td>
+                <td>
+                    @Html.ActionLink("明細", "Details", new { id = m.Id }, htmlAttributes: new { @class = "btn btn-info" })
+                    @Html.ActionLink("編輯", "Edit", new { id = m.Id }, htmlAttributes: new { @class = "btn btn-primary" })
+                    @Html.ActionLink("刪除", "Delete", new { id = m.Id }, htmlAttributes: new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">2021-09-29</td>
+        </tr>
+    </tfoot>
+</table>
+<p>
+    @Html.ActionLink("新增員工資料","Create",null,new { @class="btn btn-warning"})
+</p>
+

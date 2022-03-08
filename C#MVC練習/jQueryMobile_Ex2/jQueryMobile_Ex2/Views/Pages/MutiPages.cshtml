@@ -1,0 +1,79 @@
+﻿@model IEnumerable<jQueryMobile_Ex2.Models.Hero>
+@{
+    // 由View指定自己的Layout
+    //Layout = "../Shared/_LayoutRaw.Mobile.cshtml";
+    Layout = "~/Views/Shared/_LayoutRaw.Mobile.cshtml";
+    // 不會受ViewStart.cshtml 影響
+    // 少上面那句，基本上就開不出畫面來。
+
+    ViewBag.Title = "Muti Pages"; 
+    // 這個就依然是廢話，不會被顯示出來，全按當頁Header內容了。
+
+}
+
+<div data-role="page" id="mainpage">
+    <div data-role="header">
+        <h1>咒迴人物</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <img src="../Content/images/hero/loop.jpg" alt="漫畫書">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#page_uta">乙骨優太</a></li>
+            <li><a href="#page_rika">祈本里香</a></li>
+        </ul>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed">
+        <h3>咒迴人物介紹</h3>
+    </div>
+</div>
+
+@foreach (var m in Model)
+{
+    <div data-role="page" id=@m.PageId>
+
+        <div data-role="header" data-theme="a">
+            <h1>@m.Header</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <img src=@m.ImgUrl alt=@m.ImgAlt>
+            <p>
+                @m.Intro
+            </p>
+            <div class="video-responsive">
+                @* frameborder="0" allowfullscreen ? 是什麼？ *@
+                <iframe src=@m.VideoUrl frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <h3>@m.Footer</h3>
+        </div>
+
+    </div>
+
+
+
+}
+
+@section topCSS{
+    <style>
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+            .video-responsive iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+    </style>
+
+}
+

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ListView 導覽的進階</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Content/jquery.mobile-1.4.5.css">
+    <script src="../Scripts/jquery-2.2.4.js"></script>
+    <script src="../Scripts/jquery.mobile-1.4.5.js"></script>
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>ListView 導覽的進階</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <!-- 設定了filter -->
+            <ul data-role="listview"
+                data-inset="true"
+                data-filter="true"
+                data-filter-placeholder="搜尋"
+                data-theme="a"
+                data-divider-theme="b"
+                data-count-theme="a">
+                <!-- 設定了三類的theme -->
+                <!-- 以下是分隔兼Label兼Counter? -->
+                <li data-role="list-divider">
+                    亞洲
+                    <span class="ui-li-count">共50個景點</span>
+                </li>
+                <!-- 以下是其中一個選項﹑兼可跳入的目錄頁﹑兼Label兼Counter-->
+                <!-- 我明白了，counter只是一個特別視覺效果的Label，不會因為filter有聯動 -->
+                <li>
+                    <a href="#">
+                        中國
+                        <span class="ui-li-count">24個景點</span>
+                    </a>
+                </li>
+                <!-- 自訂 data-inset="true" 而有的 icon 效果 -->
+                <li data-icon="user"><a href="#">日本</a></li>
+                <li data-icon="arrow-r"><a href="#">韓國</a></li>
+
+            </ul>
+        </div>
+
+        <div data-role="footer">Footer</div>
+    </div>
+</body>
+</html>

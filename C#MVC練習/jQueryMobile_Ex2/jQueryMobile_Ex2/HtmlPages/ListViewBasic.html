@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ListView 的 基礎</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Content/jquery.mobile-1.4.5.css">
+    <script src="../Scripts/jquery-2.2.4.js"></script>
+    <script src="../Scripts/jquery.mobile-1.4.5.js"></script>
+
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header"><h1>ListView 的 基礎</h1></div>
+        
+        <div data-role="main" class="ui-content">
+            <!-- 無排序號碼 -->
+            <ul data-role="listview">
+                <li>法</li>
+                <li>英</li>
+                <li>美</li>
+            </ul>
+            <br/>
+            <!-- 有排序號碼 -->
+            <ol data-role="listview">
+                <li>法</li>
+                <li>英</li>
+                <li>美</li>
+            </ol>
+            <!-- 導覽用 -->
+            <ol data-role="listview" data-inset="true">
+                <li><a href="#">法</a></li>
+                <li><a href="#">英</a></li>
+                <li><a href="#">美</a></li>
+            </ol>
+        </div>
+    
+    </div>
+</body>
+</html>

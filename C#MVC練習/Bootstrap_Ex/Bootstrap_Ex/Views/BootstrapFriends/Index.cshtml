@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Bootstrap_Ex.Models.BootstrapFriend>
+
+@{
+    ViewBag.Title = "IndexBootstrap";
+}
+
+@section topCSS{
+    <style type="text/css">
+        /*標題*/
+        th {
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+        /*營光棒*/
+        .table > tbody > tr:hover {
+            background-color: aqua;
+        }
+    </style>
+}
+
+@section endJS{
+    <script type="text/javascript">
+        function showName(name) {
+            alert("Your name is : " + name);
+        }
+    </script>
+}
+
+
+<h2>Index</h2>
+
+<div class="jumbotron alter-success">
+    <h2>朋友的基本資料</h2>
+</div>
+
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <th>
+            <div class="glyphicon glyphicon-th-list"></div>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            <div class="glyphicon glyphicon-user"></div>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            <div class="glyphicon glyphicon-phone"></div>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @* Button文字改成中文 *@
+                @Html.ActionLink("編輯", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("明細", "Details", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("刪除", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@* 移位到下方 *@
+<p>
+    @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-warning" })
+</p>
+
+

@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "CarSalesAjaxJSON";
+}
+
+<h2>CarSalesAjaxJSON</h2>
+
+<select id="ways">
+    <option value="/JsonApi/getCarSalesNumber2">同專案的JsonApiController</option>
+    <option value="/api/cars">同專案的Web API</option>
+</select>
+
+<button class="btn btn-success" id="post_btn_id">
+    以 jQuery.post() 呼叫遠端 API
+</button>
+<button class="btn btn-warning" id="get_btn_id">
+    以 jQuery.get() 呼叫遠端 API
+</button>
+<button class="btn btn-info" id="getJSON_btn_id">
+    以 jQuery.getJSON() 呼叫遠端 API
+</button>
+<button class="btn btn-danger" id="reset_btn_id">
+    Reset
+</button>
+
+<div style="height:30px;"></div>
+<div id="urlText" class="alert alert-info"></div>
+<div class="panel panel-primary panel-collapse" id="carPanel">
+    <div class="panel-heading">
+        <h3 class="text-center">@DateTime.Now.Year 年度，1-3月 份汔車</h3>
+    </div>
+    <div class="panel-body" id="panelBody">
+        <canvas id="chartCanvas"></canvas>
+    </div>
+</div>
+<div id="result" class="alert alert-danger"></div>
+
+@section endJS{
+    <script>
+        var result = document.getElementById("result");
+
+        // 取消 Ajax 快取 ?
+        $.ajaxSetup({ cache: false });
+
+        function getUrl()
+        {
+            //apiUrl 來自<select>控制項的<option value="...">
+            var select = document.getElementById('ways');
+            var val = select.options[select.selectedIndex].value;
+            //alert(val);
+            return val;
+        }
+
+
+        //以 jQuery 的方法 Ajax 呼叫遠端 Controller API，取回 JSON 格式資料
+        $().ready(function () {
+
+            // 清空 result
+            $("#reset_btn_id").click(function () {
+                result.style.display = "none";
+                result.innerHTML = "";
+                document.getElementById("carPanel").style.display = "none";
+            });
+
+            // 第二種方法
+            // $.post()
+            $("#post_btn_id").click(function () {
+
+                $.post(getUrl(), JsonDataHandler);
+
+            }); // end of post click
+
+            // 第三種方法
+            // $.get()
+            $("#get_btn_id").click(function () {
+
+                $.get(getUrl(), JsonDataHandler);
+
+            }); // end of get click
+
+            // 第四種方法
+            // $.getJSON()
+            $("#getJSON_btn_id").click(function () {
+
+                $.getJSON(getUrl(), JsonDataHandler);
+
+            }); // end of get click
+
+        })
+
+        // Ajax 回呼處理 function, 將 response
+        var jsArray = null;
+        function JsonDataHandler(response) {
+
+            if (response != null) {
+
+                // 將回傳的JSON資料指定給 jsArray
+                jsArray = response;
+                showLineChart();
+                result.innerHTML = JSON.stringify(response);
+                result.style.display = "block";
+
+            }
+        }
+
+        var canvas = document.getElementById("chartCanvas");
+        //取得 <canvas> 畫布上的 2d 渲染環境 (rendering context)
+        var ctx = canvas.getContext("2d");
+
+        //繪製 Chart 圖表
+        function showLineChart() {
+            // 讓 panel 確定顯示
+            document.getElementById("carPanel").style.display = "block";
+            var chart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: ['1月','2月','3月'],
+                    datasets: [{
+                        label: jsArray[0].Brand,
+                        data: jsArray[0].Sales,
+                        fill: false,
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: "circle",
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }, {
+                        label: jsArray[1].Brand,
+                        data: jsArray[1].Sales,
+                        fill: false,
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: "circle",
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }
+
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        fontSize: 26,
+                        text: '標題'
+                    },
+                    tooltips: {
+                        mode: 'point',
+                        intersect: true,
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            fontColor: 'black',
+                        }
+                    }
+                }
+            })
+        }
+
+    </script>
+}

@@ -1,0 +1,30 @@
+﻿
+<style type="text/css">
+@helper DisplayScore(int score)
+{
+    if (score < 60)
+    {
+        <td class="poor">@score</td>
+    }
+    else if (score >= 95)
+    {
+        <td class="excellent">@score</td>
+    }
+    else
+    {
+        <td>@score</td>
+    }
+}
+
+@helper DisplayTopScore(int id, int topId, int total)
+{
+    if (id == topId)
+    {
+        <td class="top1">@(total)</td>
+    }
+    else
+    {
+        <td>@(total)</td>
+    }
+}
+</style>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- 確保IE以最新的Render mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 以平板或手機優先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 引入Bootstrap -->
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/bootstrap-theme.min.css">
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <title>第 6 個Bootatrap</title>
+</head>
+<body>
+    <div class="container bs-docs-container">
+        實作失敗的下拉選單？原因不明，暫時跳過。
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle"
+                    data-toggle="dropdown"
+                    type="button"
+                    id="xx"
+                    aria-haspopup="true"
+                    aria-expanded="true">
+                下拉選單
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="xx">
+                <li><a href="#">123</a>
+                <li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">123</a>
+                <li>
+            </ul>
+        </div>
+
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle"
+                    type="button"
+                    d="dropdownMenu1"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="true">
+                Dropdown
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+
+
+        <div class="dropup">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropup
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+
+        <br />
+        <br />
+
+        <ul class="list-group">
+            <li class="list-group-item"> 條列項目一</li>
+            <li class="list-group-item"> 條列項目二</li>
+            <li class="list-group-item"> 條列項目三</li>
+        </ul>
+
+        <br />
+        <br />
+
+        <nav class="navbar">
+            <!-- collapse：無論任何螢幕大小，你都不會看到有選單在頂部。 -->
+            <!--  nav-collapse：當螢幕變小時，選單會改為直行顯示。 -->
+            <div class=" collapse navbar-collapse ">
+                <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div style="margin-bottom:250px;"></div>
+        <div class="dropup">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <label>網路書店</label>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">國外</li>
+                <li><a href="https://www.amazon.com/" target="_blank">亞馬遜書店</a></li>
+                <li><a href="https://www.barnesandnoble.com/" target="_blank">Barnes & Noble</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">國內</li>
+                <li><a href="http://www.book.com.tw/" target="_blank">博客來書店</a></li>
+                <li><a href="http://www.eslite.com/" target="_blank">誠品書店</a></li>
+                <li><a href="http://www.kingstone.com.tw/" target="_blank">金石堂書店</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

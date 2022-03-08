@@ -1,0 +1,15 @@
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\obj\Debug\EF_CodeFirstNewDB.csproj.CoreCompileInputs.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EF_CodeFirstNewDB.exe.config
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EF_CodeFirstNewDB.exe
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EF_CodeFirstNewDB.pdb
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EntityFramework.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EntityFramework.xml
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\obj\Debug\EF_CodeFirstNewDB.exe
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\obj\Debug\EF_CodeFirstNewDB.pdb
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\obj\Debug\EF_CodeFirstNewDB.Migrations.InitialDB.resources
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\obj\Debug\EF_CodeFirstNewDB.csproj.GenerateResource.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\obj\Debug\EF_CodeFirstNewDB.csproj.AssemblyReference.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\DataBase\CodeFirst.BlogDB.mdf
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstNewDB\EF_CodeFirstNewDB\bin\Debug\DataBase\CodeFirst.BlogDB_log.ldf

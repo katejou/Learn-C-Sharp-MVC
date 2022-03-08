@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>第六章 Json 的 AJAX</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/Chart.min.js"></script>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron alert-success">
+            <h3>以 jQuery 4 個 Ajax 指今呼叫遠端 API , 取回 JSON 資料</h3>
+            <h6>第一次有些慢，等一下就行了。</h6>
+        </div>
+        <button class="btn btn-primary" id="ajax_btn_id">
+            以 .ajax() 呼叫遠端 API
+        </button>
+        <button class="btn btn-success" id="post_btn_id">
+            以 jQuery.post() 呼叫遠端 API
+        </button>
+        <button class="btn btn-warning" id="get_btn_id">
+            以 jQuery.get() 呼叫遠端 API
+        </button>
+        <button class="btn btn-info" id="getJSON_btn_id">
+            以 jQuery.getJSON() 呼叫遠端 API
+        </button>
+        <button class="btn btn-danger" id="reset_btn_id">
+            Reset
+        </button>
+        <div style="height:30px;"></div>
+        <div id="urlText" class="alert alert-info"></div>
+        <div id="result" class="alert alert-danger"></div>
+    </div>
+    <script>
+
+        // 取回 顯示結果的 div
+        var result = document.getElementById("result");
+        // 取消 Ajax 快取 ?
+        $.ajaxSetup({ cache: false });
+
+        //var apiUrl = "https://localhost:44377/JsonApi/getCarSalesNumber";
+
+        var apiUrl = "/JsonApi/getCarSalesNumber";
+
+        // 顯示 JSON result
+        function showAjaxResult(response) {
+            // 顯示結果的 div
+            result.innerHTML = JSON.stringify(response);
+            //result.className = getAlertStyle();  // <--- 什麼方法？
+            result.style.display = "block";
+        }
+
+        // 當這個HTML準備好的時候，載入︰
+        $().ready(function () {
+
+            // 顯示 apiUrl
+            $("#urlText").text("API URL : " + apiUrl);
+
+            // 清空 result
+            $("#reset_btn_id").click(function () {
+                result.style.display = "none";
+                result.innerHTML = "";
+            });
+
+            // 第一種方法
+            // $.ajax()
+            $("#ajax_btn_id").click(function () {
+
+                $.ajax({
+                    url: apiUrl,
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        // 將 JSON 物件 -> 文字
+                        jsonText = JSON.stringify(response);
+                        result.innerHTML = jsonText;
+                        result.style.display = "block";
+                        //result.className = getAlertStyle();  // <--- 什麼方法？
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+
+                }); // end of .ajax
+
+            }); // end of ajax_btn_id  click
+
+            // 第二種方法
+            // $.post()
+            $("#post_btn_id").click(function () {
+
+                $.post(apiUrl, function (response) {
+                    showAjaxResult(response)
+                });
+
+            }); // end of post click
+
+            // 第三種方法
+            // $.get()
+            $("#get_btn_id").click(function () {
+
+                $.get(apiUrl, function (response) {
+                    showAjaxResult(response)
+                });
+
+            }); // end of get click
+
+            // 第四種方法
+            // $.getJSON()
+            $("#getJSON_btn_id").click(function () {
+
+                $.getJSON(apiUrl, function (response) {
+                    showAjaxResult(response)
+                });
+
+            }); // end of get click
+
+        });  // end of ready
+
+    </script>
+</body>
+</html>

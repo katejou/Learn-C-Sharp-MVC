@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0, user-scalable=no" />
+    @* 這個可以選擇引用 CDN 路徑 ，也就是外網去抓檔，據說有分流效果，對網站伺服器比較好？*@
+    @Styles.Render("~/Content/Mobile/css", "~/Content/jquerymobile/css")
+    @Scripts.Render("~/bundles/jquery", "~/bundles/jquerymobile")
+    @RenderSection("topCSS", required: false)
+    <script>
+        $(document).ready(function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+
+</head>
+<body>
+
+    <div data-role="page" data-theme="a">
+        @* 這個 是可以移除，如果不必要在桌面和行動版之間有切換連結的話 *@
+        @Html.Partial("_ViewSwitcher")
+
+        <div data-role="header">
+            @*<h1>@ViewBag.Title</h1>*@
+            @*上面是原本的，下面是書要求改的*@
+            <h1>@ViewBag.Header</h1>
+        </div>
+
+        @*<div data-role="content">*@
+        @*上面是原本的，下面是書要求改的*@
+        <div role="main" class="ui-content">
+            @RenderSection("featured", false)
+            行動版
+            @RenderBody()
+        </div>
+
+        @* 這個Footer 是書要求新增的 *@
+        <div data-role="footer" data-position="fixed">
+            <h3>@ViewBag.Footer</h3>
+        </div>
+
+    </div>
+
+</body>
+</html>

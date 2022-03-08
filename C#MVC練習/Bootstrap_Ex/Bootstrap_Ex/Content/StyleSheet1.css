@@ -1,0 +1,33 @@
+﻿/*欄位列*/
+th {
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.table > tbody > tr:hover {
+    background-color: lemonchiffon !important;
+}
+
+/*不及格*/
+.poor {
+    color: white !important;
+    background-color: red !important;
+}
+/*不及格*/
+.excellent {
+    background-color: aqua !important;
+}
+
+/*總分第一名*/
+.top1 {
+    background-color: yellow !important;
+    border: 2px dashed black !important;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+    /*字體大小原來可以用 em 為單位 (初一看以為是 cm 結果真的放到太大了。)*/
+    /*:after是後綴文字的意思！Css 還可以包括文字，我真是第一次知道*/
+    .top1::after {
+        content: ' (總分第一名)';
+    }

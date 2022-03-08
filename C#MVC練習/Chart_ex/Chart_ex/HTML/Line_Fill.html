@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>折線圖實作 - 點</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/Chart.min.js"></script>
+</head>
+<body>
+    <div class="container" style="height:250px; width:500px; float:left;">
+        <canvas id="lineChart"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('lineChart');
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [
+                    {
+                        label: "Taipei",
+                        data: [16, 15, 18, 21, 25, 27, 25, 21, 18, 15],
+                        fill: false,
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: ['circle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'],
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: 'Jan-Oct Average Temperature'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: 'black',
+                    }
+                }
+            }
+        });
+    </script>
+    <div class="container1" style="height:250px; width:500px; float:left;">
+        <canvas id="lineChart1"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('lineChart1');
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [
+                    {
+                        label: "Taipei",
+                        data: [-12, 15, 18, 0, 25, 27, -28, 21, 30, 5],
+                        fill: 'origin',
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: ['circle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'],
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: 'Jan-Oct Average Temperature'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: 'black',
+                    }
+                }
+            }
+        });
+    </script>
+    <br />
+    <div class="container2" style="height:250px; width:500px; float:left;">
+        <canvas id="lineChart2"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('lineChart2');
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [
+                    {
+                        label: "Taipei",
+                        data: [16, 15, 18, 21, 25, 27, 25, 21, 18, 15],
+                        fill: 'start',
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: ['circle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'],
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: 'Jan-Oct Average Temperature'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: 'black',
+                    }
+                }
+            }
+        });
+    </script>
+    <div class="container3" style="height:250px; width:500px; float:left;">
+        <canvas id="lineChart3"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('lineChart3');
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [
+                    {
+                        label: "Taipei",
+                        data: [16, 15, 18, 21, 25, 27, 25, 21, 18, 15],
+                        fill: 'end',
+                        backgroundColor: 'rgba(255,165,0,0.3)',
+                        borderColor: 'rgb(255,165,0)',
+                        pointStyle: ['circle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'],
+                        pointBackgroundColor: 'rgb(0,255,0)',
+                        pointRadius: 5,
+                        pointHoverRadius: 10,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: 'Jan-Oct Average Temperature'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: 'black',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

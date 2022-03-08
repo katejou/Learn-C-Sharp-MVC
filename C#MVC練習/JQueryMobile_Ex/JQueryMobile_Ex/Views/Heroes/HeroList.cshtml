@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "HeroList";
+}
+
+<h2>HeroList</h2>
+
+<div class="well"><h1>咒迴學生</h1></div>
+<ul>
+    <li class="active"><a data-toggle="tab" href="#tab_maki">真希</a></li>
+    <li><a data-toggle="tab" href="#tab_maii">真依</a></li>
+    <li><a data-toggle="tab" href="#tab_panda">胖達</a></li>
+    <li><a data-toggle="tab" href="#tab_toge">棘</a></li>
+</ul>
+<div class="tab-content">
+    <div id="tab_maki" class="tab-pane fade in active">
+        <h1>禪院真希</h1>
+        <p>天與咒縛</p>
+        <img src="~/Content/images/heroes/maki.jpg" />
+    </div>
+    <div id="tab_maii" class="tab-pane fade">
+        <h1>禪院真依</h1>
+        <p>術式構築</p>
+        <img src="~/Content/images/heroes/maii.jpg" />
+    </div>
+    <div id="tab_panda" class="tab-pane fade">
+        <h1>胖達</h1>
+        <p>咒骸</p>
+        <img src="~/Content/images/heroes/panda.jpg" />
+    </div>
+    <div id="tab_toge" class="tab-pane fade">
+        <h1>狗卷棘</h1>
+        <p>咒言師</p>
+        <img src="~/Content/images/heroes/toge.jpg" />
+    </div>
+</div>
+
+@section topCSS{
+
+    <style>
+
+        /*咒迴學生的 背景和文字*/
+        div.well {
+            background-color: lightgreen !important;
+            margin-top:5px;
+        }
+            div.well > h1 {
+                text-align:center;
+            }
+
+        /*選中的頁簽*/
+        li.active > a {
+            color: white !important;
+            background-color: dodgerblue !important;
+        }
+
+        /*所有頁簽*/
+        a[data-toggle="tab"] {
+            border: 1px solid gray !important;
+            width: 80px;
+            text-align: center;
+        }
+
+        /*所有頁簽的包裝   (在書中，冒號後還有 a 但是不知道幹什麼，語法也不對，所以我無視。)*/
+        ul.nav {
+            border-bottom: 1px solid black;
+        }
+
+        img {
+            width:100%;
+            height:auto;
+        }
+
+
+
+    </style>
+
+}

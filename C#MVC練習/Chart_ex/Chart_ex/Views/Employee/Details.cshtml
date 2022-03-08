@@ -1,0 +1,41 @@
+﻿@model Chart_ex.Models.Employee
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<dl class="dl-horizontal">
+    <dt>@Html.DisplayNameFor(m => m.Id)</dt>
+    <dd>@Html.DisplayFor(m => m.Id)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Name)</dt>
+    <dd>@Html.DisplayFor(m => m.Name)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Mobile)</dt>
+    <dd>@Html.DisplayFor(m => m.Mobile)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Email)</dt>
+    <dd>@Html.DisplayFor(m => m.Email)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Department)</dt>
+    <dd>@Html.DisplayFor(m => m.Department)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Title)</dt>
+    <dd>@Html.DisplayFor(m => m.Title)</dd>
+</dl>
+<p>
+    @Html.ActionLink("編輯", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("返回員工列表", "Index", null, new { @class = "btn btn-warning" })
+</p>
+
+@section topCSS{
+
+    <style>
+        dt {
+            background-color: antiquewhite;
+            border: 1px dotted red;
+        }
+
+        dd {
+            background-color: aliceblue;
+            border: 1px dotted red;
+        }
+    </style>
+
+}

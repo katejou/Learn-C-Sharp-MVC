@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Bootstrap_Ex.Models.Student>
+@using Bootstrap_Ex.Models;
+
+<h2>GlobalHtmlHelper+Css引用</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chinese)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.English)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Math)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Name)
+            </td>
+
+            @MyHelper.DisplayScore(item.Chinese)
+            @MyHelper.DisplayScore(item.English)
+            @MyHelper.DisplayScore(item.Math)
+            @MyHelper.DisplayTopScore(item.Id, ViewBag.TopId, item.Total)
+        </tr>
+        }
+    </tbody>
+</table>
+
+@* 對應了Share/_Layout那邊的引入 *@
+@section topCSS{
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet"/>
+}

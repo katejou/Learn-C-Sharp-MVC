@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>多Page的示範，含影片</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Content/jquery.mobile-1.4.5.css">
+    <script src="../Scripts/jquery-2.2.4.js"></script>
+    <script src="../Scripts/jquery.mobile-1.4.5.js"></script>
+
+    <style>
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+            .video-responsive iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+    </style>
+
+
+</head>
+<body>
+    <div data-role="page" id="mainpage">
+        <div data-role="header">
+            <h1>咒迴人物</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <img src="../Content/images/hero/loop.jpg">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#page_uta">乙骨優太</a></li>
+                <li><a href="#page_rika">祈本里香</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <h3>咒迴人物介紹</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="page_uta">
+
+        <div data-role="header" data-theme="a">
+            <h1>乙骨優太</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <img src="../Content/images/hero/uta.jpg">
+            <p>
+                純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神純愛戰神
+            </p>
+            <div class="video-responsive">
+                <iframe src="https://www.youtube.com/embed/Z7XaSSrN5_8"></iframe>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <h3>戀童？中二病</h3>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="page_rika">
+
+        <div data-role="header" data-theme="a">
+            <h1>祈本里香</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <img src="../Content/images/hero/rika.jpg">
+            <p>
+                特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈特級過怨咒靈
+            </p>
+            <div class="video-responsive">
+                <iframe src="https://www.youtube.com/embed/hgcncB05Qzk"></iframe>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <h3>死了都被詛咒的可憐女孩</h3>
+        </div>
+
+    </div>
+
+</body>
+</html>

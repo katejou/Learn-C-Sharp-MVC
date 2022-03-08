@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Blog_Connection-Web.config Connection String" description="Blog_Connection 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="Data Source=tcp:mvc-codefirstdbserver.database.windows.net,1433;Initial Catalog=MVC_Test_DB;User Id=kate_jou@mvc-codefirstdbserver;Password=Ab123456789" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\kate_jou\\source\\repos\\Learning\\MVC\\MVC_CodeFirst\\MVC_CodeFirst\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Blog_Connection']/@connectionString" />
+  </parameter>
+  <parameter name="OtherDB-Web.config Connection String" description="OtherDB 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="data source=.;initial catalog=Custom_Doc;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\kate_jou\\source\\repos\\Learning\\MVC\\MVC_CodeFirst\\MVC_CodeFirst\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OtherDB']/@connectionString" />
+  </parameter>
+  <parameter name="Blog_Connection_DatabasePublish-Web.config Connection String" description="Blog_Connection_DatabasePublish 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="Blog_Connection_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\kate_jou\\source\\repos\\Learning\\MVC\\MVC_CodeFirst\\MVC_CodeFirst\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Blog_Connection_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,7 +1,0 @@
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.exe.config
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.exe
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.pdb
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.csproj.CoreCompileInputs.cache
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.exe
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.pdb
-C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.csprojAssemblyReference.cache

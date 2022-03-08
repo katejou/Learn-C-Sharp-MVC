@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Bars_Data_(ViewBag)";
+    var footerText = DateTime.Now.Year + "年 / " + DateTime.Now.Month + "月 ";
+
+    var month = Json.Encode(ViewBag.Months);
+    var temperature = Json.Encode(ViewBag.Temperature);
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Bars_Data_(ViewBag) 直向</div>
+            <div class="panel-body">
+                <canvas id="verticalBar"></canvas>
+            </div>
+            <div class="panel-footer">@footerText</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Bars_Data_(ViewBag) 橫向</div>
+            <div class="panel-body">
+                <canvas id="horizontalBar"></canvas>
+            </div>
+            <div class="panel-footer">@footerText</div>
+        </div>
+    </div>
+</div>
+
+@section endJS{
+    <script>
+        const charDir = {
+            vertial: 'bar',
+            horizontal: 'horizontalBar'
+        };
+
+        var ctx1 = document.getElementById("verticalBar");
+        GenBarChart(ctx1, charDir.vertial);
+
+        var ctx2 = document.getElementById("horizontalBar");
+        GenBarChart(ctx2, charDir.horizontal);
+
+        function GenBarChart(context, bartype)
+        {
+            if (!(bartype == 'bar' || bartype == 'horizontalBar'))
+                return;
+            var myChart = new Chart(context, {
+
+                type: bartype,
+                data: {
+                    labels: @Html.Raw(month),
+                    datasets: [
+                        {
+                            label: "氣溫？",
+                            data: @Html.Raw(temperature),
+                            backgroundColor:
+                                [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(255, 205, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)'
+                                ],
+                            borderColor:
+                                [
+                                    'rgb(255, 99, 132)',
+                                    'rgb(255, 159, 64)',
+                                    'rgb(255, 205, 86)',
+                                    'rgb(75, 192, 192)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(153, 102, 255)'
+                                ],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        xAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }
+                        ],
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }
+                        ],
+                    }
+                }
+            })
+        }
+    </script>
+}
+

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="FriendContext-Web.config Connection String" description="FriendContext 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=FriendContext-20210728135439;           Integrated Security=True;           MultipleActiveResultSets=True;           AttachDbFilename=|DataDirectory|FriendContext-20210728135439.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\kate_jou\\source\\repos\\Learning\\MVC\\MyFirstMVC\\MyFirstMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FriendContext']/@connectionString" />
+  </parameter>
+</parameters>

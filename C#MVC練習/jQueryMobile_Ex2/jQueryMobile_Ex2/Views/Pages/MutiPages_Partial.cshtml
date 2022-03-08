@@ -1,0 +1,51 @@
+﻿@model IEnumerable<jQueryMobile_Ex2.Models.Hero>
+@{
+    Layout = "~/Views/Shared/_LayoutRaw.Mobile.cshtml";
+}
+
+<div data-role="page" id="mainpage">
+    <div data-role="header">
+        <h1>咒迴人物</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <img src="../Content/images/hero/loop.jpg" alt="漫畫書">
+        <ul data-role="listview" data-inset="true">
+            @* 第一個Loop *@
+            @foreach (var m in Model)
+            {
+                <li><a href="#@m.PageId">@m.Header</a></li>
+            }
+        </ul>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed">
+        <h3>咒迴人物介紹</h3>
+    </div>
+</div>
+
+@* 第二個被簡化了的Loop *@
+@foreach (var m in Model)
+{
+    @Html.Partial("HeroPartial", m);
+}
+
+@section topCSS{
+    <style>
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+            .video-responsive iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+    </style>
+
+}
+

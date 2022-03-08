@@ -1,0 +1,55 @@
+﻿@model Chart_ex.Models.User
+@{
+    ViewBag.Title = "SampleHelpers4";
+    string msg = @"<input type='reset' value='Reset' class='btn btn-primary' />";
+}
+
+<h2>SampleHelpers4</h2>
+
+<br />
+@Html.DisplayName("Id") : @Html.Display("Id")
+<br />
+<br />
+@* Hidden﹑HiddenFor *@
+@* 弱型別 *@
+@Html.Hidden("Id")
+<br />
+@* 強型別 *@
+@Html.HiddenFor(m => m.Id)
+<br />
+<br />
+@* Raw *@
+<br />
+@* 輸出一個"經過編譯後產出的"按鈕 *@
+@Html.Raw(msg)
+<br />
+@* 輸出"不經過編譯的"純文字 *@
+@msg
+<br />
+<br />
+@* ActionLink 這個 Model 是 Controller 傳進來的 *@
+<br />
+@Html.ActionLink("新增", "Create", new { id = Model.Id }, new { @class = "btn btn-primary" })
+<br />
+@Html.ActionLink("明細", "Details", new { id = Model.Id }, new { @class = "btn btn-success" })
+<br />
+@Html.ActionLink("編輯", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+<br />
+@Html.ActionLink("刪除", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+<br />
+@* 最後一個 HtmlHelper 是 Controller 的名字 ，會傳送到另一個View *@
+@Html.ActionLink("清單", "Index", "HtmlHelper", null, new { @class = "btn btn-info" })
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

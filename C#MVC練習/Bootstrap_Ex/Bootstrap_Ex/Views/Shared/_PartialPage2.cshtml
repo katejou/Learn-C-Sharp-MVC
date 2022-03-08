@@ -1,0 +1,15 @@
+﻿@model Bootstrap_Ex.Models.Card
+
+<div class="col-xl-3 col-lg-4 col-md-6 col-mm-12">
+    @* 上行都是在不同裝置上顯示的大小 *@
+    <div class="card">
+        <div class="headshot">
+            <img class="card-img-top" src="~/Content/Pic/@Model.Photo" alt="">
+        </div>
+        <div class="card-block">
+            <h3 class="card-title">@Model.Name</h3>
+            <p class="card-text">@Model.Brief</p>
+            <a href="@Model.Url" class="btn btn-primary">維基百科</a>
+        </div>
+    </div>
+</div>

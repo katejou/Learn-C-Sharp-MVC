@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "FindAge";
+}
+
+@*<h2>FindAge</h2>*@
+
+<div data-role="main" class="ui-content">
+    <ul data-role="listview" data-inset="true">
+        @* 第一個Loop *@
+        @foreach (var m in Model)
+        {
+            <li>@m.Name</li>
+        }
+    </ul>
+</div>

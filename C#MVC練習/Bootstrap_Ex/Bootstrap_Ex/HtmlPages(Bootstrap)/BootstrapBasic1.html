@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 記得要在 Nutget 更新版本 -->
+    <meta charset="utf-8" />
+    <!-- 確保IE以最新的Render mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=9,IE=10,IE=11,IE=EDGE" />-->
+    <!-- 以平板或手機優先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 引入Bootstrap -->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title>第一個Bootatrap</title>
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <!-- Body 必要，Header 和 Footer 選擇性 -->
+            <div class="panel-heading">
+                Panel Heading
+            </div>
+            <div class="panel-body">
+                ...
+            </div>
+            <div class="panel-footer">
+                Panel Footer
+            </div>
+        </div>
+
+        <br />
+        <div class="panel panel-primary">
+            <!-- Body 必要，Header 和 Footer 選擇性 -->
+            <div class="panel-heading">
+                <h4 class="text-center"> 我的圖片</h4>
+            </div>
+            <div class="panel-body">
+                <img src="../PIC/download.jpg" alt="" />
+                <p class="text-success">
+                    我的圖片的介紹
+                </p>
+            </div>
+            <div class="panel-footer">
+                圖片的 Footer
+            </div>
+        </div>
+
+        <button type="button" class="btn">Button</button>
+        <button type="button" class="btn btn-default">Defualt</button>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+
+        <div class="jumbotron">
+            <h1>Jumbotron 超大螢幕</h1>
+            <p class="text-success">啦啦啦，它的第一個實作</p>
+            <!-- 以 <a> 實作指定大小尺寸的 Button -->
+            <a class="btn btn-primary btn-lg" href="http://getbootstrap.com/" role="button"> Bootstrap 官網</a>
+        </div>
+        <br />
+        <br />
+        這頁太擁擠了，我開新分頁繼續實作
+    </div>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

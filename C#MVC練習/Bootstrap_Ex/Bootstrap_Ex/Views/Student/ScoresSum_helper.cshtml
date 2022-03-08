@@ -1,0 +1,142 @@
+﻿@using Bootstrap_Ex.Models;
+@model IEnumerable<Bootstrap_Ex.Models.Student>
+
+@{
+    ViewBag.Title = "使用helper(感覺是function)";
+
+    // 用Razor來找最高中文分數 (記得 using models)
+    // 用 linq 來篩選出那一欄
+    var totals = from e in Model
+                 select new Student { Total = e.Total };
+    // 從中挑出最高
+    int topScore = totals.Max(x => x.Total);
+
+}
+
+@helper DisplayScore(int score)
+{
+    if (score < 60)
+    {
+        <td class="poor">@score</td>
+    }
+    else if (score >= 95)
+    {
+        <td class="excellent">@score</td>
+    }
+    else
+    {
+        <td>@score</td>
+    }
+}
+
+<h2>使用helper(感覺是function)</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Chinese)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.English)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Math)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var it in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => it.Id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(x => it.Name)
+            </td>
+
+            @* 國文 *@
+            @DisplayScore(it.Chinese);
+
+            @* 英文 *@
+            @DisplayScore(it.English);
+
+            @* 數學 *@
+            @DisplayScore(it.Math);
+
+
+            @if (it.Total == topScore)
+            {
+                <td class="top1">
+                    @Html.DisplayFor(x => it.Total)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(x => it.Total)
+                </td>
+            }
+
+        </tr>
+        }
+        @* foreach 的終結 *@
+    </tbody>
+</table>
+
+@* 對應了Share/_Layout那邊的引入 *@
+@section topCSS{
+
+    <style type="text/css">
+        /*欄位列*/
+        th {
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+
+        .table > tbody > tr:hover {
+            background-color: lemonchiffon !important;
+        }
+
+        /*不及格*/
+        .poor {
+            color: white !important;
+            background-color: red !important;
+        }
+        /*不及格*/
+        .excellent {
+            background-color: aqua !important;
+        }
+
+        /*總分第一名*/
+        .top1 {
+            background-color: yellow !important;
+            border: 2px dashed black !important;
+            font-weight: 900;
+            font-size: 1.2em;
+        }
+            /*字體大小原來可以用 em 為單位 (初一看以為是 cm 結果真的放到太大了。)*/
+            /*:after是後綴文字的意思！Css 還可以包括文字，我真是第一次知道*/
+            .top1::after {
+                content: ' (總分第一名)';
+            }
+    </style>
+
+}

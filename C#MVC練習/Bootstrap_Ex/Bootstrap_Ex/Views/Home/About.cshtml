@@ -1,0 +1,66 @@
+﻿@using System.Text;
+
+@{
+    ViewBag.Title = "版面配置";
+    StringBuilder sb = new StringBuilder();
+    sb.Append("文章文章文章文章文章文章文章文章文章文章文章文章文章文章");
+    string article = sb.ToString();
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>圖片一</h4>
+            </div>
+            <div>
+                <img src="../Content/Pic/cat1.jpg">
+                <p class="text-success">貓貓一</p>
+            </div>
+            <div class="panel-footer alert-danger">
+                5t51
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>圖片二</h4>
+            </div>
+            <div>
+                <img src="../Content/Pic/cat2.jpg">
+                <p class="text-success">貓貓二</p>
+            </div>
+            <div class="panel-footer alert-danger">
+                5t52
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>圖片三</h4>
+            </div>
+            <div>
+                <img src="../Content/Pic/cat3.jpg">
+                <p class="text-success">貓貓三</p>
+            </div>
+            <div class="panel-footer alert-danger">
+                5t53
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="alert alert-info">
+    -- 下面會平分兩欄 --
+</div>
+
+<div class="row">
+    <div class="col-md-6"><pre>@article</pre></div>
+    <div class="col-md-6"><pre>@article</pre></div>
+</div>
+

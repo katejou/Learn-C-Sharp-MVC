@@ -1,0 +1,179 @@
+﻿@using Bootstrap_Ex.Models;
+@model IEnumerable<Bootstrap_Ex.Models.Student>
+
+@{
+    ViewBag.Title = "用Action/Razor去加總，套用自訂CSS";
+
+    // 用Razor來找最高中文分數 (記得 using models)
+    // 用 linq 來篩選出那一欄
+    var totals = from e in Model
+                 select new Student { Total = e.Total };
+    // 從中挑出最高
+    int topScore = totals.Max(x => x.Total);
+
+}
+
+<h2>用Action去加總，套用自訂CSS</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Chinese)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.English)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Math)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var it in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => it.Id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(x => it.Name)
+            </td>
+
+            @* 國文 *@
+            @if (it.Chinese < 60)
+            {
+                <td class="poor">
+                    @Html.DisplayFor(x => it.Chinese)
+                </td>
+            }
+            else if (it.Chinese >= 95)
+            {
+                <td class="excellent">
+                    @Html.DisplayFor(x => it.Chinese)
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(x => it.Chinese)
+                </td>
+            }
+
+            @* 英文 *@
+            @if (it.English < 60)
+            {
+                <td class="poor">
+                    @Html.DisplayFor(x => it.English)
+                </td>
+            }
+            else if (it.English >= 95)
+            {
+                <td class="excellent">
+                    @Html.DisplayFor(x => it.English)
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(x => it.English)
+                </td>
+
+            }
+
+            @* 數學 *@
+            @if (it.Math < 60)
+            {
+                <td class="poor">
+                    @Html.DisplayFor(x => it.Math)
+                </td>
+            }
+            else if (it.Math >= 95)
+            {
+                <td class="excellent">
+                    @Html.DisplayFor(x => it.Math)
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(x => it.Math)
+                </td>
+            }
+
+            @* 總分 -- 上面的那是從 Action 找top 存入 ViewBag.topId，下面的是從 Razor Linq 找出 topScore *@
+            @*@if (it.Id == ViewBag.topId)*@
+            @if (it.Total == topScore)
+            {
+                <td class="top1">
+                    @Html.DisplayFor(x => it.Total)
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(x => it.Total)
+                </td>
+            }
+
+        </tr>
+        }
+        @* foreach 的終結 *@
+    </tbody>
+</table>
+
+@* 對應了Share/_Layout那邊的引入 *@
+@section topCSS{
+
+    <style type="text/css">
+        /*欄位列*/
+        th {
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+
+        .table > tbody > tr:hover {
+            background-color: lemonchiffon !important;
+        }
+
+        /*不及格*/
+        .poor {
+            color: white !important;
+            background-color: red !important;
+        }
+        /*不及格*/
+        .excellent {
+            background-color: aqua !important;
+        }
+
+        /*總分第一名*/
+        .top1 {
+            background-color: yellow !important;
+            border: 2px dashed black !important;
+            font-weight: 900;
+            font-size: 1.2em;
+        }
+            /*字體大小原來可以用 em 為單位 (初一看以為是 cm 結果真的放到太大了。)*/
+            /*:after是後綴文字的意思！Css 還可以包括文字，我真是第一次知道*/
+            .top1::after {
+                content: ' (總分第一名)';
+            }
+    </style>
+
+}

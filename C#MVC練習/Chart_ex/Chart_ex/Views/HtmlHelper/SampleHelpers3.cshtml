@@ -1,0 +1,44 @@
+﻿@*@model Chart_ex.Models.User*@
+@* 以下，是這句話分開使用的方法 *@
+@using Chart_ex.Models
+@model Editor_Using_Obj
+
+@{
+    ViewBag.Title = "SampleHelpers3";
+}
+
+
+<h2>SampleHelpers3</h2>
+
+@* 分開式 *@
+@{ Html.BeginForm();}
+
+@Html.LabelFor(x => x.Id)@Html.EditorFor(x => x.Id)
+<br />
+@Html.LabelFor(x => x.Name)@Html.EditorFor(x => x.Name)
+<br />
+@Html.LabelFor(x => x.Password)@Html.EditorFor(x => x.Password)
+<br />
+@Html.LabelFor(x => x.Email)@Html.EditorFor(x => x.Email)
+<br />
+@Html.LabelFor(x => x.HomePage)@Html.EditorFor(x => x.HomePage)
+<br />
+@Html.LabelFor(x => x.Gender)@Html.EditorFor(x => x.Gender)
+<br />
+@Html.LabelFor(x => x.Gender)@Html.EnumDropDownListFor(x => x.Gender)
+<br />
+@Html.LabelFor(x => x.Birthday)@Html.EditorFor(x => x.Birthday)
+<br />
+@Html.LabelFor(x => x.Birthday2)@Html.EditorFor(x => x.Birthday2)
+<br />
+@Html.LabelFor(x => x.Money)@Html.EditorFor(x => x.Money)
+<br />
+@Html.LabelFor(x => x.City)@Html.EditorFor(x => x.City)
+<br />
+@Html.LabelFor(x => x.Comment)@Html.EditorFor(x => x.Comment)
+<br />
+@Html.LabelFor(x => x.Terms)@Html.EditorFor(x => x.Terms)
+<br />
+<input type="submit" value="Submit" class="btn btn-primary">
+
+@{ Html.EndForm();}

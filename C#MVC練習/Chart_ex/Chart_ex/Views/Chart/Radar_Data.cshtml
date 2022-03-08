@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Radar_Data";
+    var footerText = DateTime.Now.Year + "年 / " + DateTime.Now.Month + "月 ";
+    var month = Json.Encode(ViewBag.Months);
+    var temperature1 = Json.Encode(ViewBag.temperature1);
+    var temperature2 = Json.Encode(ViewBag.temperature2);
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">雷達圖</div>
+            <div class="panel-body">
+                <canvas id="RadarChart"></canvas>
+            </div>
+            <div class="panel-footer">@footerText</div>
+        </div>
+    </div>
+</div>
+
+@section endJS{
+    <script>
+        var ctx = document.getElementById('RadarChart');
+        var chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: @Html.Raw(month),
+                datasets: [
+                    {
+                        label: "台北",
+                        data: @Html.Raw(temperature1),
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgb(255, 159, 64)',
+                        pointStyle: 'circle',
+                        pointBackgroundColor: 'rgb(0,0,255)',
+                        pointRadius: 2,
+                        pointHoverRadius: 5
+                    },
+                    {
+                        label: "台南",
+                        data: @Html.Raw(temperature2),
+                        backgroundColor: 'rgba(16, 210, 214, 0.2)',
+                        borderColor: 'rgb(191, 16, 214)',
+                        pointStyle: 'circle',
+                        pointBackgroundColor: 'rgb(161,251,171)',
+                        pointRadius: 2,
+                        pointHoverRadius: 5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: 'black',
+                        fontSize:24
+                    }
+                },
+                title: {
+                    display: true,
+                    text: '標題',
+                    fontSize:26
+                },
+                scale: {
+                    tick: {
+                        beginAtZero:true
+                    },
+                    pointLabels: {
+                        fontSize:20
+                    },
+                },
+            }
+        });
+    </script>
+
+
+
+
+}

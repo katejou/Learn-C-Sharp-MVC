@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = "/Views/Shared/_Layout.Mobile.cshtml";
+    ViewBag.Title = "MVC 的 單 Page";
+}
+
+<img src=@ViewBag.Image alt="釘哥" />
+<p>
+    @ViewBag.Intro
+</p>
+
+@section topCSS{
+
+    <style>
+        p {
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 15px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1.ui-title {
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+        }
+
+    </style>
+}
+

@@ -1,0 +1,70 @@
+﻿
+@{
+
+    //ViewBag.Title = "HeroList";
+    // 上面是桌面版，會被Layout 去抓的值。
+    // 以下，是行動版抓的值
+
+    ViewBag.Title = "jQuery Mobile";
+    ViewBag.Header = "jQuery Mobile 行動版";
+    ViewBag.Footer = "行動版Footer";
+
+}
+
+<div data-role="tabs">
+    <div data-role="navbar">
+        <ul>
+            <li><a class="ui-btn-active" href="#tab_maki">真希</a></li>
+            <li><a href="#tab_maii">真依</a></li>
+            <li><a href="#tab_panda">胖達</a></li>
+            <li><a href="#tab_toge">棘</a></li>
+        </ul>
+    </div>
+
+    <div id="tab_maki" class="ui-content">
+        <h1>禪院真希</h1>
+        <p>天與咒縛</p>
+        <img src="~/Content/images/heroes/maki.jpg" />
+    </div>
+    <div id="tab_maii" class="ui-content">
+        <h1>禪院真依</h1>
+        <p>術式構築</p>
+        <img src="~/Content/images/heroes/maii.jpg" />
+    </div>
+    <div id="tab_panda" class="ui-content">
+        <h1>胖達</h1>
+        <p>咒骸</p>
+        <img src="~/Content/images/heroes/panda.jpg" />
+    </div>
+    <div id="tab_toge" class="ui-content">
+        <h1>狗卷棘</h1>
+        <p>咒言師</p>
+        <img src="~/Content/images/heroes/toge.jpg" />
+    </div>
+
+</div>
+@section topCSS{
+
+    <style>
+
+        /*防止學生的名字會貼邊之類？*/
+        h1.ui-title {
+            margin-left: 10% !important;
+            margin-right: 10% !important;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        /*這個是選中的頁簽*/
+        div > .ui-btn {
+            background-color: mediumpurple !important;
+            text-shadow: none !important;
+            color: white !important;
+            border-radius: 5px;
+        }
+    </style>
+
+}

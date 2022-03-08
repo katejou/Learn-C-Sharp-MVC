@@ -1,0 +1,20 @@
+﻿@model IEnumerable<jQueryMobile_Ex2.Models.Student>
+@{
+    ViewBag.Title = "Index"; // <-- 會被Header取代並不會顥示到畫面，但是保留在這頁。比較好認。
+}
+
+@*<h2>Index</h2>*@
+
+
+<div data-role="main" class="ui-content">
+    <p>
+        這個畫面截取的時間是︰@DateTime.Now
+    </p>
+    <ul data-role="listview" data-inset="true">
+        @* 第一個Loop *@
+        @foreach (var m in Model)
+        {
+            <li>@m.Name</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="b">
+    <a href="#" data-role="button" data-rel="back" data-theme="a">返回</a>
+    <h1>無從實證的連絡方法</h1>
+</div>
+
+<div data-role="main" class="ui-content">
+    <ul data-role="listview"
+        data-inset="true"
+        data-theme="a"
+        data-dividertheme="b">
+        <li data-role="list-divider"><h1>電話</h1></li>
+        <li data-icon="phone"><a href="tel:24338955">打電話</a></li>
+
+        <li data-role="list-divider"><h1>手機</h1></li>
+        <li data-icon="phone"><a href="tel:+8860900666555">打手機</a></li>
+
+        <li data-role="list-divider"><h1>簡訊</h1></li>
+        <li data-icon="comment"><a href="sms://+8860900666555">傳簡訊</a></li>
+
+        <li data-role="list-divider"><h1>電郵</h1></li>
+        <li data-icon="mail"><a href="mailto://somewhere@mail.com.tw">傳電郵</a></li>
+
+        <li data-role="list-divider"><h1>Line</h1></li>
+        <li data-icon="edit"><a href="line://msg/text/Hello!">Line</a></li>
+        @* 感覺怪怪的，都不用寫人名嗎？哪是要送給誰？ *@
+
+        <li data-role="list-divider"><h1>Skype</h1></li>
+        <li data-icon="video"><a href="skype:echo123?call">Skype</a></li>
+
+    </ul>
+</div>

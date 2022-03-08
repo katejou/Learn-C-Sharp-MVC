@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BlogDataModelStoreContainer">
+    <EntitySet Name="Users" EntityType="BlogDataModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Blog" EntityType="BlogDataModel.Store.Blog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Post" EntityType="BlogDataModel.Store.Post" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UsersBlog" Association="BlogDataModel.Store.UsersBlog">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="BlogPost" Association="BlogDataModel.Store.BlogPost">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsersUserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BlogBlogId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UsersBlog">
+    <End Role="Users" Type="BlogDataModel.Store.Users" Multiplicity="1" />
+    <End Role="Blog" Type="BlogDataModel.Store.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UsersUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BlogPost">
+    <End Role="Blog" Type="BlogDataModel.Store.Blog" Multiplicity="1" />
+    <End Role="Post" Type="BlogDataModel.Store.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="BlogId" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="BlogBlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

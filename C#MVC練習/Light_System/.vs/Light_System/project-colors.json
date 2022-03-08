@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0ba33f22-e239-4fb4-85b2-4dc3154aa77d": {
+      "ProjectGuid": "0ba33f22-e239-4fb4-85b2-4dc3154aa77d",
+      "DisplayName": "Light_System",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

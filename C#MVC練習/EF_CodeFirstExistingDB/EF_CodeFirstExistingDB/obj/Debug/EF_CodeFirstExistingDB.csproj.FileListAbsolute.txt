@@ -1,0 +1,13 @@
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EF_CodeFirstExistingDB.exe.config
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EF_CodeFirstExistingDB.exe
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EF_CodeFirstExistingDB.pdb
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EntityFramework.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EntityFramework.xml
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\obj\Debug\EF_CodeFirstExistingDB.csproj.AssemblyReference.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\obj\Debug\EF_CodeFirstExistingDB.csproj.CoreCompileInputs.cache
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\obj\Debug\EF_CodeFirstExistingDB.csproj.CopyComplete
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\obj\Debug\EF_CodeFirstExistingDB.exe
+C:\Users\kate_jou\source\repos\Learning\MVC\EF_CodeFirstExistingDB\EF_CodeFirstExistingDB\obj\Debug\EF_CodeFirstExistingDB.pdb

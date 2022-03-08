@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Repair";
+}
+
+<div data-role="header" data-add-back-btn="true" data-position="fixed" data-theme="b">
+    <a href="#" data-role="button" data-rel="back" data-theme="a">返回</a>
+    <h1>維修保養(reflow)</h1>
+</div>
+
+<div data-role="main" class="ui-content">
+    <table data-role="table"
+           id="table-column-reflow"
+           data-mode="reflow"
+           class="ui-responsive table-stroke table-stripe">
+        @* 不填也預設為 reflow *@
+        <caption>價目表</caption>
+        <thead>
+            <tr>
+                <th data-priority="1">編號</th>
+                <th data-priority="critical">維修項目</th>
+                <th data-priority="2">小型車</th>
+                <th>轎車</th>
+                <th data-priority="3">休旅車</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>引擎</td>
+                <td>3000</td>
+                <td>3200</td>
+                <td>3500</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>機油</td>
+                <td>400</td>
+                <td>500</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>煞車</td>
+                <td>699</td>
+                <td>750</td>
+                <td>800</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

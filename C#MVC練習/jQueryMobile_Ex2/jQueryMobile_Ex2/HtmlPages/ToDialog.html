@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>被外呼叫的Dialog頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Content/jquery.mobile-1.4.5.css">
+    <script src="../Scripts/jquery-2.2.4.js"></script>
+    <script src="../Scripts/jquery.mobile-1.4.5.js"></script>
+
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+</head>
+<body>
+    <!-- data-dialog="true" -->
+    <div data-role="page"
+         data-dialog="true">
+        <div data-role="header"
+             data-theme="b">
+            <h1>被「外」呼叫的Dialog頁</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h1>Dialog對話方塊</h1>
+            <p>
+                這是毎獨立的ToDialog.html頁面，被a出來了，但按返回，就可以跳回上一頁。
+            </p>
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all">返回</a>
+        </div>
+
+    </div>
+</body>
+</html>

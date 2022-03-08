@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "462e1380-8d32-4f6b-9f72-e12dc112344b": {
+      "ProjectGuid": "462e1380-8d32-4f6b-9f72-e12dc112344b",
+      "DisplayName": "jQueryMobile_Ex2",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "其他檔案",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

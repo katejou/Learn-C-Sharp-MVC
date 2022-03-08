@@ -1,0 +1,197 @@
+﻿@using Light_System.Models
+@model Class1
+@{
+    ViewBag.Title = "Balance of Light";
+}
+
+<h2>Light Balance</h2>
+
+@* 色溫條圖表 *@
+
+@* 明暗度圖表 *@
+@**@
+<div class="container" style="width:1000px;">
+    <canvas id="barChart" height="20"></canvas>
+    <canvas id="barChart2" height="20"></canvas>
+    <canvas id="barChart1" height="20"></canvas>
+</div>
+<script>
+    var width = 1000;
+    var ctx = document.getElementById('barChart').getContext("2d");
+    var grd = ctx.createLinearGradient(0, 0, width, 0);
+    grd.addColorStop(0, "#606060");
+    grd.addColorStop(1, "white");
+    var chart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['照度Lux'],
+            datasets: [
+                {
+                    data: [100000],
+                    backgroundColor: grd,
+                    borderColor: 'black',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (tooltipItem) {
+                        return tooltipItem.yLabel;
+                    }
+                }
+            },
+            scales: {
+                xAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 10,
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 10,
+                        }
+                    }
+                ],
+
+            }
+        }
+    });
+
+    var ctx1 = document.getElementById('barChart1').getContext("2d");
+    var chart = new Chart(ctx1, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['流明Lm'],
+            datasets: [
+                {
+                    data: [4000],
+                    backgroundColor: grd,
+                    borderColor: 'black',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (tooltipItem) {
+                        return tooltipItem.yLabel;
+                    }
+                }
+            },
+            scales: {
+                //maintainAspectRatio: false,
+                /*yAxes: [*/
+                xAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 10,
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 10,
+                        }
+                    }
+                ],
+
+            }
+        }
+    });
+
+    var ctx2 = document.getElementById('barChart2').getContext("2d");
+    var grd2 = ctx2.createLinearGradient(0, 0, width, 0);
+    grd2.addColorStop(0, "#ff3800");
+    grd2.addColorStop(0.3, "#F4F99F ");
+    grd2.addColorStop(0.5, "white");
+    grd2.addColorStop(0.7, "#e6f1ff");
+    grd2.addColorStop(1, "#b3d7ff");
+    var chart = new Chart(ctx2, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['色溫Kelvin'],
+            datasets: [
+                {
+                    data: [12000],
+                    backgroundColor: grd2,
+                    borderColor: 'black',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (tooltipItem) {
+                        return tooltipItem.yLabel;
+                    }
+                }
+            },
+            scales: {
+                xAxes: [
+                    {
+                        ticks: {
+                            /*beginAtZero: true,*/
+                            min: 2000,
+                            max: 12000,
+                            fontSize: 10,
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 10,
+                        }
+                    }
+                ],
+
+            }
+        }
+    });
+</script>
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(x => x.Target_Lux)<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.EditorFor(x => x.Target_Lux, new { htmlAttributes = new { @autocomplete = "off" } })<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.LabelFor(x => x.In_Lux)<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.EditorFor(x => x.In_Lux, new { htmlAttributes = new { @autocomplete = "off" } })<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.Label("Out_Lm") <span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.EditorFor(x => x.Out_Lm, new { htmlAttributes = new { @autocomplete = "off" } })<span> &nbsp; &nbsp; &nbsp;</span>
+    <br />
+    @Html.LabelFor(x => x.Target_Kelvin)<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.EditorFor(x => x.Target_Kelvin, new { htmlAttributes = new { @autocomplete = "off" } })<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.LabelFor(x => x.In_Kelvin)<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.EditorFor(x => x.In_Kelvin, new { htmlAttributes = new { @autocomplete = "off" } })<span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.Label("Out_Kelvin") <span> &nbsp; &nbsp; &nbsp;</span>
+    @Html.EditorFor(x => x.Out_Kelvin, new { htmlAttributes = new { @autocomplete = "off" } })
+    <br />
+    <br />
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <br />
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <br />
+}
