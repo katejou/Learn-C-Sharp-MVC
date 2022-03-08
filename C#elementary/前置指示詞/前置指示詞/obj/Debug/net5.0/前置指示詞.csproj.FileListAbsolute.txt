@@ -1,0 +1,16 @@
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\前置指示詞.exe
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\前置指示詞.deps.json
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\前置指示詞.runtimeconfig.json
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\前置指示詞.runtimeconfig.dev.json
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\前置指示詞.dll
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\ref\前置指示詞.dll
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\bin\Debug\net5.0\前置指示詞.pdb
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.csproj.AssemblyReference.cache
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.AssemblyInfoInputs.cache
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.AssemblyInfo.cs
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.csproj.CoreCompileInputs.cache
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.dll
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\ref\前置指示詞.dll
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.pdb
+C:\Users\kate_jou\source\repos\前置指示詞\前置指示詞\obj\Debug\net5.0\前置指示詞.genruntimeconfig.cache

@@ -1,0 +1,14 @@
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.exe.config
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.exe
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.pdb
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Query_Exp_Learning.csprojAssemblyReference.cache
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Query_Exp_Learning.csproj.CoreCompileInputs.cache
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.exe
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.pdb
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\obj\Debug\linq_ADO_Query_Exp_Learning.csprojAssemblyReference.cache
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\obj\Debug\linq_ADO_Query_Exp_Learning.csproj.CoreCompileInputs.cache
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.exe
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\obj\Debug\linq_ADO_Learning.pdb
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.exe.config
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.exe
+C:\Users\kate_jou\source\repos\C#elementary\Linq_with_ADO(query_exp)\linq_ADO_Learning\bin\Debug\linq_ADO_Learning.pdb

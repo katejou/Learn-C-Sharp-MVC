@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "7D5wsE1kYP1/XiRT6U2pSOTyVSguqY3535xM0ei3ENyiCD6V5NLCYztk35K4DE+qD9ycs3LCK6o9aqfMrotgig==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kate_jou\\source\\repos\\Learning\\C#\\C#elementary\\Linq(Basic)\\Linq_Leraning\\Linq_Leraning.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kate_jou\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512",
+    "C:\\Users\\kate_jou\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\kate_jou\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\kate_jou\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

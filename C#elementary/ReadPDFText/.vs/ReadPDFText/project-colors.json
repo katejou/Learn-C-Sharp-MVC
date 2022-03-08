@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7ed4740d-a205-48f0-aa0f-b1e20957493f": {
+      "ProjectGuid": "7ed4740d-a205-48f0-aa0f-b1e20957493f",
+      "DisplayName": "ReadPDFText",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
